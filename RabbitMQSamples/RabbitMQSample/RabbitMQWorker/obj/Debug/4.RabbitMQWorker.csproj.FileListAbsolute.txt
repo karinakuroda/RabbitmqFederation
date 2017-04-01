@@ -1,0 +1,3 @@
+C:\Users\kmidori\Desktop\RabbitMQSample\RabbitMQSample\RabbitMQWorker\bin\Debug\RabbitMQWorker.exe.config
+C:\Users\kmidori\Desktop\RabbitMQSample\RabbitMQSample\RabbitMQWorker\obj\Debug\RabbitMQWorker.exe
+C:\Users\kmidori\Desktop\RabbitMQSample\RabbitMQSample\RabbitMQWorker\obj\Debug\RabbitMQWorker.pdb
