@@ -12,18 +12,18 @@ namespace RabbitMQSample
     {
         public static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost", Port=5672};
+            var factory = new ConnectionFactory() { HostName = "192.168.99.100", Port=5672};
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
                 //channel.QueueDeclare(queue: "hello",
-                //                     durable: false,
+                //                     durable: true,
                 //                     exclusive: false,
                 //                     autoDelete: false,
                 //                     arguments: null);
                 for (int i = 0; i <1; i++)
                 {
-                    var file = File.ReadAllBytes(@"C:\Users\kmidori\Desktop\RabbitMQSample\RabbitMQSample\RabbitMQSample\HTMLPage1.html");
+                    var file = File.ReadAllBytes(@"..\..\HTMLPage1.html");
 
                     var body = file;//Encoding.UTF8.GetBytes(file);
 

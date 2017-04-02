@@ -30,3 +30,7 @@ rabbitmqctl stop_app
 telnet localhost 5672
 rabbitmqctl join_cluster rabbit@my-rabbit
 
+
+
+git config core.autocrlf false -> para fazer commit sem alterar padrao do linux
+http://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
