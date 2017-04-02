@@ -16,21 +16,24 @@ namespace RabbitMQSample
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                //channel.QueueDeclare(queue: "hello",
-                //                     durable: true,
-                //                     exclusive: false,
-                //                     autoDelete: false,
-                //                     arguments: null);
+                channel.QueueDeclare(queue: "rabbitteste",
+                                  durable: true,
+                                  exclusive: false,
+                                  autoDelete: false,
+                                  arguments: null);
                 for (int i = 0; i <1; i++)
                 {
                     var file = File.ReadAllBytes(@"..\..\HTMLPage1.html");
 
                     var body = file;//Encoding.UTF8.GetBytes(file);
+                    var properties = channel.CreateBasicProperties();
+                    properties.Persistent = true;
 
                     channel.BasicPublish(exchange: "",
-                                         routingKey: "rabbitteste",
-                                         basicProperties: null,
-                                         body: body);
+                               routingKey: "rabbitteste",
+                               basicProperties: properties,
+                               body: body);
+                   
                     Console.WriteLine(" [x] Sent {0}", i);
                 }
                
