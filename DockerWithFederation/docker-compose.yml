@@ -1,5 +1,5 @@
 rabbit1:
-  image: karinakuroda/rabbitmq-cluster
+  image: karinakuroda/rabbitmq-federation
   hostname: rabbit1
   environment:
     - ERLANG_COOKIE=abcdefg
@@ -7,7 +7,7 @@ rabbit1:
     - "5682:5672"
     - "15692:15672"
 rabbit2:
-  image: karinakuroda/rabbitmq-cluster
+  image: karinakuroda/rabbitmq-federation
   hostname: rabbit2
   links:
     - rabbit1
@@ -18,7 +18,7 @@ rabbit2:
     - "5683:5672"
     - "15693:15672"
 rabbit3:
-  image: karinakuroda/rabbitmq-cluster
+  image: karinakuroda/rabbitmq-federation
   hostname: rabbit3
   links:
     - rabbit1
